@@ -152,10 +152,24 @@ body::before {
   white-space: nowrap;
 }
 .btn-primary {
+  position: relative;
+  overflow: hidden;
   background: var(--brand-grad);
   color: #fff;
   box-shadow: var(--shadow-btn);
 }
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  height: 100%;
+  width: 55%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+}
+.btn-primary:hover::after { left: 130%; }
 .btn-primary:hover {
   box-shadow: var(--shadow-hover);
   transform: translateY(-3px);
@@ -189,6 +203,10 @@ body::before {
   font-size: clamp(1.8rem, 4.5vw, 2.6rem);
   font-weight: 900;
   margin-top: 0.4rem;
+}
+.section-title .grad {
+  background-size: 200% auto;
+  animation: gradShift 6s ease-in-out infinite;
 }
 .section-sub {
   color: var(--text-dim);
@@ -411,6 +429,7 @@ body.no-scroll { overflow: hidden; }
   color: var(--neon);
   margin-bottom: 1.4rem;
   box-shadow: var(--shadow-neon);
+  animation: badgePulse 3.5s ease-in-out infinite;
 }
 .hero-title {
   font-size: clamp(2.2rem, 6.5vw, 4rem);
@@ -524,6 +543,46 @@ body.no-scroll { overflow: hidden; }
   font-weight: 900;
   border: 3px solid rgba(0, 0, 0, 0.35);
   box-shadow: var(--shadow-neon);
+}
+
+/* ---- نشانگر اسکرول به پایین ---- */
+.scroll-hint {
+  position: absolute;
+  bottom: 1.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.scroll-hint:hover { color: var(--neon); }
+.scroll-hint-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  opacity: 0.8;
+}
+.scroll-mouse {
+  width: 26px;
+  height: 42px;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  padding-top: 7px;
+  opacity: 0.75;
+}
+.scroll-wheel {
+  width: 4px;
+  height: 9px;
+  border-radius: 999px;
+  background: currentColor;
+  animation: wheel 1.8s ease-in-out infinite;
 }
 
 /* ==================================================================
@@ -682,6 +741,7 @@ body.no-scroll { overflow: hidden; }
   box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
   box-shadow: 0 0 12px color-mix(in srgb, var(--c, #00D4FF) 50%, transparent);
   transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: fillGlow 3.5s ease-in-out infinite;
 }
 .skill-percent {
   font-weight: 800;
@@ -732,8 +792,9 @@ body.no-scroll { overflow: hidden; }
   border: 1px solid var(--border);
   padding: 0.4rem 1.1rem;
   border-radius: 999px;
-  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.3s ease;
 }
+.project-card:hover .project-link { transform: translateX(-4px); }
 .project-card:hover .project-link {
   background: rgba(0, 212, 255, 0.08);
   border-color: var(--neon);
@@ -852,6 +913,23 @@ body.no-scroll { overflow: hidden; }
   60% { transform: scale(1.25); }
   75% { transform: scale(1); }
 }
+@keyframes gradShift {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+@keyframes badgePulse {
+  0%, 100% { box-shadow: var(--shadow-neon); }
+  50% { box-shadow: 0 0 28px rgba(0, 212, 255, 0.45); }
+}
+@keyframes fillGlow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.35); }
+}
+@keyframes wheel {
+  0% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(12px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
 
 /* ==================================================================
    ریسپانسیو — تبلت و دسکتاپ
@@ -873,7 +951,22 @@ body.no-scroll { overflow: hidden; }
     height: auto;
     transition: none;
   }
-  .nav-link { font-size: 0.97rem; }
+  .nav-link { font-size: 0.97rem; position: relative; }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    left: 1rem;
+    bottom: 0.1rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--brand-grad);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after { transform: scaleX(1); }
   .nav-theme { margin-top: 0; }
 
   .hero-grid {
@@ -921,6 +1014,7 @@ body.no-scroll { overflow: hidden; }
   /* هیرو */
   .hero { padding: 5.5rem 0 2.5rem; }
   .hero-badge { font-size: 0.85rem; padding: 0.35rem 1rem; }
+  .scroll-hint { display: none; }
   .hero-title { font-size: clamp(1.7rem, 8.5vw, 2.4rem); }
   .hero-type { font-size: 0.95rem; min-height: 2.2rem; }
   .hero-actions { gap: 0.7rem; margin-top: 1.6rem; }
