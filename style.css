@@ -601,8 +601,8 @@ body.no-scroll { overflow: hidden; }
   will-change: transform;
 }
 .skill-card:hover {
-  border-color: var(--neon);
-  box-shadow: var(--shadow-neon);
+  border-color: var(--c, var(--neon));
+  box-shadow: 0 0 22px color-mix(in srgb, var(--c, #00D4FF) 28%, transparent);
 }
 .skill-card.special {
   grid-column: 1 / -1;
@@ -613,6 +613,29 @@ body.no-scroll { overflow: hidden; }
   box-shadow: var(--shadow-btn);
   padding: 1.6rem 1.8rem;
 }
+
+/* ---- رنگ‌های اختصاصی هر حرفه (آیکون + نوار پیشرفت + درصد) ---- */
+.skill-fs      { --c: #8B5CF6; --g: linear-gradient(135deg, #8B5CF6, #2A1EA8); }
+.skill-py      { --c: #FFD43B; --g: linear-gradient(135deg, #FFD43B, #306998); }
+.skill-c       { --c: #5B9BD5; --g: linear-gradient(135deg, #8FCBFF, #03599C); }
+.skill-cpp     { --c: #4AA8F2; --g: linear-gradient(135deg, #4AA8F2, #00599C); }
+.skill-html    { --c: #FF7043; --g: linear-gradient(135deg, #FFB199, #E34F26); }
+.skill-css     { --c: #38BDF8; --g: linear-gradient(135deg, #61DAFB, #1572B6); }
+.skill-js      { --c: #F7DF1E; --g: linear-gradient(135deg, #FFE066, #E8B400); }
+.skill-mysql   { --c: #79B8E0; --g: linear-gradient(135deg, #79B8E0, #1E4C73); }
+.skill-php     { --c: #A7ABD4; --g: linear-gradient(135deg, #A7ABD4, #6167B1); }
+.skill-avr     { --c: #2ECC71; --g: linear-gradient(135deg, #7FF0B0, #1E9E5A); }
+.skill-arduino { --c: #00BCD4; --g: linear-gradient(135deg, #00BCD4, #00777C); }
+.skill-altium  { --c: #FF5E3A; --g: linear-gradient(135deg, #FF9E7A, #E83C14); }
+.skill-react   { --c: #61DAFB; --g: linear-gradient(135deg, #61DAFB, #00A3CC); }
+.skill-pwa     { --c: #00D4FF; --g: linear-gradient(135deg, #00D4FF, #2563EB); }
+.skill-git     { --c: #F05032; --g: linear-gradient(135deg, #FF7A55, #E5400B); }
+.skill-github  { --c: #C9D1D9; --g: linear-gradient(135deg, #9CA3AF, #30363D); }
+.skill-vercel  { --c: #E5E7EB; --g: linear-gradient(135deg, #9CA3AF, #374151); }
+.skill-api     { --c: #F59E0B; --g: linear-gradient(135deg, #FBBF24, #D97706); }
+.skill-seo     { --c: #10B981; --g: linear-gradient(135deg, #34D399, #059669); }
+.skill-ux      { --c: #A855F7; --g: linear-gradient(135deg, #C084FC, #7C3AED); }
+.skill-ai      { --c: #EC4899; --g: linear-gradient(135deg, #F472B6, #DB2777); }
 .skill-icon {
   flex-shrink: 0;
   width: 52px;
@@ -621,14 +644,20 @@ body.no-scroll { overflow: hidden; }
   align-items: center;
   justify-content: center;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--c, #00D4FF) 16%, rgba(255, 255, 255, 0.04)), rgba(255, 255, 255, 0.02));
+  border: 1px solid color-mix(in srgb, var(--c, #00D4FF) 38%, transparent);
   font-size: 2rem;
   line-height: 1;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
+.skill-icon i,
+.skill-icon svg {
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--c, #00D4FF) 55%, transparent));
+}
+.skill-card:hover .skill-icon { transform: scale(1.08); }
 .skill-card.special .skill-icon {
-  background: rgba(0, 212, 255, 0.08);
-  border-color: rgba(0, 212, 255, 0.3);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--c, #00D4FF) 22%, transparent), rgba(255, 255, 255, 0.02));
+  border-color: color-mix(in srgb, var(--c, #00D4FF) 50%, transparent);
 }
 .skill-info { flex: 1; min-width: 0; }
 .skill-head { display: flex; flex-direction: column; gap: 0.1rem; }
@@ -649,17 +678,18 @@ body.no-scroll { overflow: hidden; }
   height: 100%;
   width: 0;
   border-radius: 999px;
-  background: var(--brand-grad);
+  background: var(--g, var(--brand-grad));
   box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--c, #00D4FF) 50%, transparent);
   transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .skill-percent {
   font-weight: 800;
   font-size: 0.95rem;
-  color: var(--neon);
+  color: var(--c, var(--neon));
   min-width: 3.2rem;
   text-align: left;
-  text-shadow: var(--shadow-neon);
+  text-shadow: 0 0 12px color-mix(in srgb, var(--c, #00D4FF) 55%, transparent);
 }
 
 /* ==================================================================
