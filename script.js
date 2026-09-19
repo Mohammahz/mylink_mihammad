@@ -174,33 +174,37 @@ if (cursorGlow && canHover && !prefersReduced) {
    ۴) افکت تایپ (Typewriter)
    ================================================================== */
 const typeEl = $('#typewriter');
+const typeIconEl = $('#typewriter-icon');
 const roles = [
-  '💻 برنامه‌نویس فول‌استک',
-  '🌐 توسعه‌دهنده‌ی وب',
-  '⚡ برنامه‌نویس سخت‌افزار و AVR',
-  '🎛️ طراح بردهای الکترونیکی',
-  '🚀 عاشق یادگیری و ساختن',
+  { icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 19h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>', text: 'برنامه‌نویس فول‌استک' },
+  { icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>', text: 'توسعه‌دهنده‌ی وب' },
+  { icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>', text: 'برنامه‌نویس سخت‌افزار و AVR' },
+  { icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="2.2" stroke="currentColor" stroke-width="2"/><circle cx="15" cy="12" r="2.2" stroke="currentColor" stroke-width="2"/><circle cx="7" cy="17" r="2.2" stroke="currentColor" stroke-width="2"/></svg>', text: 'طراح بردهای الکترونیکی' },
+  { icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M12 15c-2-1-4-4-4-8 3-2 7-2 10 0 0 4-2 7-4 8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 15l-3 3M13 14l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7.5" r="1.6" fill="currentColor"/></svg>', text: 'عاشق یادگیری و ساختن' },
 ];
 
-if (typeEl) {
+if (typeEl && typeIconEl) {
   if (prefersReduced) {
-    typeEl.textContent = roles[0];
+    typeIconEl.innerHTML = roles[0].icon;
+    typeEl.textContent = roles[0].text;
   } else {
     let roleIdx = 0;
     let charIdx = 0;
     let deleting = false;
+    typeIconEl.innerHTML = roles[0].icon;
 
     function type() {
       const current = roles[roleIdx];
-      typeEl.textContent = current.slice(0, charIdx);
+      typeEl.textContent = current.text.slice(0, charIdx);
 
       let delay = deleting ? 40 : 95;
-      if (!deleting && charIdx === current.length) {
+      if (!deleting && charIdx === current.text.length) {
         deleting = true;
         delay = 2200;
       } else if (deleting && charIdx === 0) {
         deleting = false;
         roleIdx = (roleIdx + 1) % roles.length;
+        typeIconEl.innerHTML = roles[roleIdx].icon;
         delay = 450;
       } else {
         charIdx += deleting ? -1 : 1;
@@ -411,8 +415,11 @@ if (copyBtn) {
       ok = document.execCommand('copy');
       ta.remove();
     }
-    copyBtn.textContent = ok ? '✅ کپی شد!' : '❌ خطا در کپی';
-    setTimeout(() => { copyBtn.textContent = '📋 کپی ایمیل'; }, 2000);
+    const EMAIL_SVG = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    const CHECK_SVG = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    const CROSS_SVG = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>';
+    copyBtn.innerHTML = ok ? `${CHECK_SVG} کپی شد!` : `${CROSS_SVG} خطا در کپی`;
+    setTimeout(() => { copyBtn.innerHTML = `${EMAIL_SVG} کپی ایمیل`; }, 2000);
   });
 }
 

@@ -72,6 +72,8 @@ body {
   line-height: 1.8;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* هاله‌های نور ثابت پس‌زمینه */
@@ -386,6 +388,7 @@ body.no-scroll { overflow: hidden; }
    ================================================================== */
 .hero {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   padding: 7.5rem 0 4rem;
@@ -424,6 +427,13 @@ body.no-scroll { overflow: hidden; }
   align-items: center;
   justify-content: center;
   gap: 0.1rem;
+}
+.type-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--neon);
+  margin-inline-end: 0.4rem;
+  filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.5));
 }
 .type-caret {
   display: inline-block;
@@ -549,6 +559,9 @@ body.no-scroll { overflow: hidden; }
   margin-top: 2rem;
 }
 .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   padding: 0.55rem 1.2rem;
   border-radius: 999px;
   background: var(--glass);
@@ -844,6 +857,81 @@ body.no-scroll { overflow: hidden; }
 
 @media (min-width: 520px) and (max-width: 899px) {
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ==================================================================
+   دستگاه‌های لمسی — غیرفعال کردن افکت‌های مبتنی بر ماوس
+   ================================================================== */
+@media (hover: none), (pointer: coarse) {
+  #cursorGlow { display: none !important; }
+  .skill-card:hover,
+  .project-card:hover,
+  .contact-card:hover,
+  .stat:hover { transform: none !important; }
+}
+
+/* ==================================================================
+   ریسپانسیو — گوشی‌های کوچک و متوسط
+   ================================================================== */
+@media (max-width: 519px) {
+  .section { padding: 3.6rem 0; }
+  .section-head { margin-bottom: 2.2rem; }
+  .section-title { font-size: clamp(1.5rem, 7vw, 2rem); }
+  .section-sub { font-size: 0.92rem; }
+
+  /* نوار ناوبری */
+  html { scroll-padding-top: 76px; }
+  .navbar { padding: 0.55rem 0; }
+  .navbar.scrolled { padding: 0.4rem 0; }
+  .logo-img { width: 34px; height: 34px; border-radius: 10px; }
+  .logo-name { font-size: 0.88rem; max-width: 56vw; }
+  #burger span { width: 21px; height: 2.2px; }
+  .nav-link { font-size: 1.15rem; }
+
+  /* هیرو */
+  .hero { padding: 5.5rem 0 2.5rem; }
+  .hero-badge { font-size: 0.85rem; padding: 0.35rem 1rem; }
+  .hero-title { font-size: clamp(1.7rem, 8.5vw, 2.4rem); }
+  .hero-type { font-size: 0.95rem; min-height: 2.2rem; }
+  .hero-actions { gap: 0.7rem; margin-top: 1.6rem; }
+  .hero-actions .btn { padding: 0.7rem 1.2rem; font-size: 0.92rem; }
+  .hero-stats { gap: 0.7rem; margin-top: 2rem; }
+  .stat { min-width: 0; flex: 1 1 calc(50% - 0.4rem); padding: 0.85rem 0.4rem; }
+  .stat-num { font-size: 1.55rem; }
+  .stat-label { font-size: 0.78rem; }
+  .profile-wrap { width: clamp(170px, 55vw, 220px); height: clamp(170px, 55vw, 220px); }
+
+  /* درباره من */
+  .about-card { padding: 1.6rem 1.2rem; }
+  .about-text { font-size: 0.98rem; }
+  .badge { font-size: 0.85rem; padding: 0.45rem 0.9rem; }
+
+  /* حرفه‌ها */
+  .skills-grid { gap: 0.85rem; }
+  .skill-card { padding: 1rem; gap: 0.75rem; }
+  .skill-icon { width: 44px; height: 44px; border-radius: 12px; font-size: 1.6rem; }
+  .skill-head h3 { font-size: 0.95rem; }
+  .skill-fa { font-size: 0.75rem; }
+  .skill-meta { gap: 0.6rem; margin-top: 0.55rem; }
+  .skill-percent { font-size: 0.85rem; min-width: 2.7rem; }
+
+  /* لینک‌ها / پروژه‌ها */
+  .projects-grid { gap: 0.9rem; }
+  .project-card { padding: 1.4rem 1.2rem; }
+  .project-card h3 { font-size: 1rem; }
+
+  /* ارتباط با من */
+  .contact-grid { gap: 0.9rem; }
+  .contact-card { padding: 1.5rem 1.1rem; }
+  .contact-info p { font-size: 0.88rem; overflow-wrap: anywhere; word-break: break-word; }
+  .contact-actions { flex-direction: column; width: 100%; }
+  .contact-actions .btn { width: 100%; }
+
+  /* فوتر */
+  .footer { padding: 2rem 1rem; }
+
+  /* بازگشت به بالا */
+  #backToTop { width: 42px; height: 42px; bottom: 18px; left: 18px; }
 }
 
 /* ==================================================================
