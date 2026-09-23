@@ -695,29 +695,91 @@ body.no-scroll { overflow: hidden; }
   box-shadow: var(--shadow-neon);
 }
 
-/* نشان‌های شناور تکنولوژی */
+/* نشان‌های شناور تکنولوژی — گرداگرد قاب پروفایل */
 .float-chip {
   position: absolute;
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 14px;
-  background: var(--glass-strong);
-  border: 1px solid var(--border);
-  font-size: 1.6rem;
-  box-shadow: var(--shadow-neon);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--chip, #00D4FF) 26%, var(--glass-strong)), var(--glass-strong));
+  border: 1px solid color-mix(in srgb, var(--chip, #00D4FF) 55%, transparent);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35), 0 0 18px color-mix(in srgb, var(--chip, #00D4FF) 30%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   animation: floatChip 6s ease-in-out infinite;
+  transition: scale 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease, z-index 0s;
 }
-.chip-1 { top: 4%; right: -6px; animation-delay: 0s; }
-.chip-2 { top: 38%; left: -22px; animation-delay: 1.2s; }
-.chip-3 { bottom: 12%; right: -18px; animation-delay: 2s; }
-.chip-4 { bottom: 26%; left: -8px; animation-delay: 0.6s; }
-.chip-1 i, .chip-2 i, .chip-3 i, .chip-4 i { font-size: 1.7rem; line-height: 1; }
+.float-chip::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--chip, #00D4FF);
+  box-shadow: 0 0 8px var(--chip, #00D4FF);
+  animation: chipPing 2.4s ease-out infinite;
+}
+.float-chip i {
+  font-size: 1.8rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--chip, #00D4FF) 70%, transparent));
+  transition: transform 0.3s ease;
+  animation: chipIcon 4s ease-in-out infinite;
+}
+/* --- هاور: بزرگ‌شدن + درخشش + تولتیپ --- */
+.float-chip:hover {
+  z-index: 5;
+  scale: 1.22;
+  border-color: color-mix(in srgb, var(--chip, #00D4FF) 95%, transparent);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--chip, #00D4FF) 38%, var(--glass-strong)), var(--glass-strong));
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45), 0 0 30px color-mix(in srgb, var(--chip, #00D4FF) 70%, transparent);
+}
+.float-chip:hover i {
+  animation: none;
+  transform: scale(1.22) rotate(-8deg);
+}
+.float-chip::before {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  background: var(--glass-strong);
+  border: 1px solid color-mix(in srgb, var(--chip, #00D4FF) 40%, transparent);
+  color: var(--text);
+  font-family: var(--font-lat);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  box-shadow: var(--shadow-neon);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(5px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  pointer-events: none;
+}
+.float-chip:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+/* چیدمان ۸ ایکون: چهار گوشه + چهار نقطه‌ی اصلی اطراف دایره */
+.chip-1 { --chip: #FFD43B; top: -18px; left: 50%; margin-left: -25px; animation-delay: 0s; }
+.chip-2 { --chip: #61DAFB; top: -8px; left: -8px; animation-delay: 0.7s; }
+.chip-3 { --chip: #F7DF1E; bottom: -8px; right: -8px; animation-delay: 1.4s; }
+.chip-4 { --chip: #00BCD4; bottom: -8px; left: -8px; animation-delay: 2.1s; }
+.chip-5 { --chip: #E34F26; top: -8px; right: -8px; animation-delay: 0.35s; }
+.chip-6 { --chip: #F05032; right: -20px; top: 50%; margin-top: -25px; animation-delay: 1.05s; }
+.chip-7 { --chip: #1572B6; bottom: -18px; left: 50%; margin-left: -25px; animation-delay: 1.75s; }
+.chip-8 { --chip: #00599C; left: -20px; top: 50%; margin-top: -25px; animation-delay: 0.5s; }
 
 /* ---- نشانگر اسکرول به پایین ---- */
 .scroll-hint {
@@ -1825,8 +1887,17 @@ body.no-scroll { overflow: hidden; }
   100% { transform: translateY(0); opacity: 0; }
 }
 @keyframes floatChip {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(4deg); }
+}
+@keyframes chipIcon {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+@keyframes chipPing {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--chip, #00D4FF) 55%, transparent); }
+  70% { box-shadow: 0 0 0 9px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
 }
 @keyframes prePulse {
   0%, 100% { transform: scale(1); }
@@ -1960,11 +2031,17 @@ body.no-scroll { overflow: hidden; }
   .stat-num { font-size: 1.55rem; }
   .stat-label { font-size: 0.78rem; }
   .profile-wrap { width: clamp(170px, 55vw, 220px); height: clamp(170px, 55vw, 220px); }
-  .float-chip { width: 38px; height: 38px; font-size: 1.3rem; border-radius: 11px; }
-  .chip-1 { right: 0; }
-  .chip-2 { left: -14px; }
-  .chip-3 { right: -8px; }
-  .chip-4 { left: -4px; }
+  .float-chip { width: 38px; height: 38px; border-radius: 12px; }
+  .float-chip i { font-size: 1.35rem; }
+  .float-chip::after { width: 5px; height: 5px; top: 5px; right: 5px; }
+  .chip-1 { top: -12px; left: 50%; margin-left: -19px; }
+  .chip-2 { top: -6px; left: -6px; }
+  .chip-3 { bottom: -6px; right: -6px; }
+  .chip-4 { bottom: -6px; left: -6px; }
+  .chip-5 { top: -6px; right: -6px; }
+  .chip-6 { right: -14px; top: 50%; margin-top: -19px; }
+  .chip-7 { bottom: -12px; left: 50%; margin-left: -19px; }
+  .chip-8 { left: -14px; top: 50%; margin-top: -19px; }
 
   /* درباره من */
   .about-card { padding: 1.6rem 1.2rem; }
