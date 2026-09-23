@@ -1,0 +1,33 @@
+{
+  "name": "محمدمهدی حاجی‌زاده | برنامه‌نویس فول‌استک و الکترونیک",
+  "short_name": "محمدمهدی حاجی‌زاده",
+  "description": "پورتفولیوی شخصی محمدمهدی حاجی‌زاده — برنامه‌نویس فول‌استک، توسعه‌دهنده سخت‌افزار و AVR و طراح بردهای الکترونیکی",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#05070F",
+  "theme_color": "#05070F",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

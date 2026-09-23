@@ -3,13 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="وب‌سایت شخصی محمدمهدی حاجی‌زاده — برنامه‌نویس فول‌استک، توسعه‌دهنده سخت‌افزار و AVR و طراح بردهای الکترونیکی" />
   <meta name="theme-color" content="#05070F" />
-  <title>محمدمهدی حاجی‌زاده | برنامه‌نویس فول‌استک و الکترونیک</title>
-  
-  <!-- favicon -->
-  <link rel="icon" href="favicon.png" />
- 
+
+  <!-- ============ SEO ============ -->
+  <title>محمدمهدی حاجی‌زاده | برنامه‌نویس فول‌استک، سخت‌افزار و AVR</title>
+  <meta name="description" content="پورتفولیوی شخصی محمدمهدی حاجی‌زاده — برنامه‌نویس فول‌استک، توسعه‌دهنده سخت‌افزار و AVR و طراح بردهای الکترونیکی. توسعه وب، پایتون، ری‌اکت، دیتابیس، طراحی PCB و اپلیکیشن‌های PWA." />
+  <meta name="keywords" content="محمدمهدی حاجی‌زاده, برنامه نویس, فول استک, Python, React, PWA, AVR, طراحی PCB, Altium Designer, توسعه وب, یزد" />
+  <meta name="author" content="محمدمهدی حاجی‌زاده" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.mohammadmehdihz.ir/" />
+
+  <!-- ============ Open Graph ============ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="محمدمهدی حاجی‌زاده" />
+  <meta property="og:title" content="محمدمهدی حاجی‌زاده | برنامه‌نویس فول‌استک و الکترونیک" />
+  <meta property="og:description" content="پورتفولیوی شخصی محمدمهدی حاجی‌زاده — برنامه‌نویس فول‌استک، توسعه‌دهنده سخت‌افزار و AVR و طراح بردهای الکترونیکی." />
+  <meta property="og:url" content="https://www.mohammadmehdihz.ir/" />
+  <meta property="og:image" content="https://www.mohammadmehdihz.ir/favicon.png" />
+  <meta property="og:image:alt" content="لوگوی محمدمهدی حاجی‌زاده" />
+  <meta property="og:locale" content="fa_IR" />
+
+  <!-- ============ Twitter Card ============ -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="محمدمهدی حاجی‌زاده | برنامه‌نویس فول‌استک و الکترونیک" />
+  <meta name="twitter:description" content="پورتفولیوی شخصی محمدمهدی حاجی‌زاده — برنامه‌نویس فول‌استک، توسعه‌دهنده سخت‌افزار و AVR و طراح بردهای الکترونیکی." />
+  <meta name="twitter:image" content="https://www.mohammadmehdihz.ir/favicon.png" />
+
+  <!-- ============ Structured Data ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "محمدمهدی حاجی‌زاده",
+    "alternateName": "Mohammad Mehdi Hajizadeh",
+    "jobTitle": "برنامه‌نویس فول‌استک",
+    "url": "https://www.mohammadmehdihz.ir/",
+    "email": "mailto:mohammadmehdihaj71@gmail.com",
+    "image": "https://www.mohammadmehdihz.ir/me.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "یزد",
+      "addressCountry": "IR"
+    },
+    "knowsAbout": ["Python", "React", "JavaScript", "HTML", "CSS", "PHP", "MySQL", "AVR", "Arduino", "Altium Designer", "PWA", "Git", "GitHub", "Backend", "UI/UX", "SEO"],
+    "sameAs": [
+      "https://github.com/Mohammahz",
+      "https://www.mohammadmehdihz.ir"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "محمدمهدی حاجی‌زاده",
+    "url": "https://www.mohammadmehdihz.ir/",
+    "inLanguage": "fa-IR"
+  }
+  </script>
+
+  <!-- ============ favicon و آیکون‌ها ============ -->
+  <link rel="icon" href="favicon.png" sizes="any" />
+  <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+
+  <!-- ============ PWA ============ -->
+  <link rel="manifest" href="manifest.json" />
+
   <!-- فونت لاتین سایبری Orbitron -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,16 +84,38 @@
   <!-- استایل اصلی -->
   <link rel="stylesheet" href="style.css" />
 
+  <!-- جلوگیری از Flash هنگام بارگذاری تم -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('viana-theme');
+        if (t === 'light') document.documentElement.dataset.theme = 'light';
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- اگر جاوااسکریپت غیرفعال بود، محتوا مخفی نماند -->
   <noscript>
     <style>
       .reveal { opacity: 1 !important; transform: none !important; }
-      #particleCanvas, .orb, #cursorGlow { display: none !important; }
+      #particleCanvas, .orb, #cursorGlow, #preloader { display: none !important; }
     </style>
   </noscript>
 </head>
 
 <body>
+
+  <!-- ===== لودینگ‌اسکرین ===== -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-logo"><img src="favicon.png" alt="" /></div>
+      <div class="preloader-bar"><span></span></div>
+      <span class="preloader-text">در حال بارگذاری...</span>
+    </div>
+  </div>
+
+  <!-- ===== لینک پرش برای دسترسی ===== -->
+  <a class="skip-link" href="#home">پرش به محتوای اصلی</a>
 
   <!-- ===== نوار پیشرفت اسکرول ===== -->
   <div id="scrollProgress" aria-hidden="true"></div>
@@ -59,17 +141,16 @@
     <div class="container nav-inner">
 
       <!-- لوگو -->
-      <a href="#home" class="logo">
+      <a href="#home" class="logo" aria-label="بازگشت به خانه">
         <span class="logo-img">
           <img src="favicon.png" alt="لوگوی محمدمهدی حاجی‌زاده" />
-          <!-- جای‌نگه‌دار گرادیانتی در صورت نبود لوگو -->
           <span class="logo-ph">م</span>
         </span>
         <span class="logo-name">محمدمهدی حاجی‌زاده</span>
       </a>
 
       <!-- منوی همبرگری (موبایل) -->
-      <button id="burger" aria-label="باز و بسته کردن منو" aria-expanded="false">
+      <button id="burger" aria-label="باز و بسته کردن منو" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
       </button>
 
@@ -77,11 +158,24 @@
       <nav class="nav-menu" id="navMenu" aria-label="منوی اصلی">
         <a href="#home" class="nav-link active">خانه</a>
         <a href="#about" class="nav-link">درباره من</a>
-        <a href="#skills" class="nav-link">حرفه‌ها</a>
+        <a href="#journey" class="nav-link">مسیر</a>
+        <a href="#skills" class="nav-link">مهارت‌ها</a>
         <a href="#projects" class="nav-link">پروژه‌ها</a>
-        <a href="#contact" class="nav-link">ارتباط با من</a>
-        <b id="themeToggle"></b>
+        <a href="#process" class="nav-link">فرآیند کار</a>
+        <a href="#learning" class="nav-link">یادگیری</a>
+        <a href="#contact" class="nav-link">ارتباط</a>
+        <button id="themeToggle" class="theme-btn" aria-label="تغییر تم روشن/تیره" title="تغییر تم">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
       </nav>
+
+      <!-- دکمه‌ی Command Palette (دسکتاپ) -->
+      <button id="paletteTrigger" class="palette-btn" aria-label="باز کردن جستجو و فرمان‌ها (Ctrl+K)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="palette-hint">جستجو...</span>
+        <kbd>Ctrl K</kbd>
+      </button>
     </div>
   </header>
 
@@ -95,18 +189,23 @@
 
         <!-- متن هیرو -->
         <div class="hero-text">
-          <span class="hero-badge glass">به نام خدا</span>
+          <span class="hero-badge glass"><span class="hero-badge-dot" aria-hidden="true"></span>به نام خدا</span>
 
-          <h1 class="hero-title">محمدمهدی حاجی‌زاده</h1>
+          <h1 class="hero-title"><span class="grad">محمدمهدی حاجی‌زاده</span></h1>
 
           <div class="hero-type" aria-live="polite">
             <span id="typewriter-icon" class="type-icon" aria-hidden="true"></span>
             <span id="typewriter"></span><span class="type-caret" aria-hidden="true"></span>
           </div>
 
+          <p class="hero-desc">
+            برنامه‌نویس فول‌استک و توسعه‌دهنده‌ی سخت‌افزار — از وب و دیتابیس تا میکروکنترلر و طراحی برد.
+          </p>
+
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary magnetic">ارتباط با من</a>
-            <a href="#projects" class="btn btn-ghost magnetic">نمونه‌کارها</a>
+            <a href="#projects" class="btn btn-primary magnetic">مشاهده پروژه‌ها</a>
+            <a href="#contact" class="btn btn-ghost magnetic">ارتباط با من</a>
+            <button type="button" class="btn btn-ghost magnetic" data-resume>دانلود رزومه</button>
           </div>
 
           <!-- آمار -->
@@ -123,10 +222,6 @@
               <span class="stat-num"><span class="counter" data-count="8">۰</span></span>
               <span class="stat-label">پروژه‌ی فعال</span>
             </div>
-            <!-- <div class="stat glass reveal">
-              <span class="stat-num">∞</span>
-              <span class="stat-label">انگیزه برای یادگیری</span>
-            </div> -->
           </div>
         </div>
 
@@ -134,10 +229,15 @@
         <div class="hero-visual">
           <div class="profile-wrap tilt">
             <div class="profile-ring" aria-hidden="true"></div>
-            <img src="me.jpg" alt="محمدمهدی حاجی‌زاده" class="profile-img"
+            <img src="me.jpg" alt="عکس پروفایل محمدمهدی حاجی‌زاده" class="profile-img" loading="eager" width="960" height="1280"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-            <!-- جای‌نگه‌دار گرادیانتی در صورت نبود عکس -->
             <div class="profile-ph" aria-hidden="true"></div>
+
+            <!-- نشان‌های تکنولوژی شناور -->
+            <span class="float-chip chip-1" aria-hidden="true"><i class="devicon-python-plain colored"></i></span>
+            <span class="float-chip chip-2" aria-hidden="true"><i class="devicon-react-original colored"></i></span>
+            <span class="float-chip chip-3" aria-hidden="true"><i class="devicon-javascript-plain colored"></i></span>
+            <span class="float-chip chip-4" aria-hidden="true"><i class="devicon-arduino-plain colored"></i></span>
           </div>
         </div>
 
@@ -156,7 +256,7 @@
       <div class="container">
 
         <div class="section-head reveal">
-          <span class="section-tag">About</span>
+          <span class="section-tag en">About</span>
           <h2 class="section-title"><span class="grad">درباره من</span></h2>
         </div>
 
@@ -186,76 +286,186 @@
           </span>
         </div>
 
+        <!-- من چه کاری انجام می‌دهم؟ -->
+        <h3 class="sub-title reveal">من چه کاری انجام می‌دهم؟</h3>
+        <div class="do-grid stagger">
+          <div class="do-card glass reveal">
+            <span class="do-icon" aria-hidden="true"><i class="devicon-html5-plain colored"></i></span>
+            <h4>توسعه وب</h4>
+            <p>ساخت وب‌سایت و وب‌اپلیکیشن با HTML, CSS, JavaScript و React</p>
+          </div>
+          <div class="do-card glass reveal">
+            <span class="do-icon" aria-hidden="true"><i class="devicon-python-plain colored"></i></span>
+            <h4>برنامه‌نویسی Python</h4>
+            <p>نوشتن اسکریپت و برنامه با پایتون</p>
+          </div>
+          <div class="do-card glass reveal">
+            <span class="do-icon" aria-hidden="true"><i class="devicon-react-original colored"></i></span>
+            <h4>توسعه با React</h4>
+            <p>ساخت رابط‌های کاربری مدرن با ری‌اکت</p>
+          </div>
+          <div class="do-card glass reveal">
+            <span class="do-icon" aria-hidden="true"><i class="devicon-mysql-plain colored"></i></span>
+            <h4>Backend و Database</h4>
+            <p>طراحی و توسعه‌ی بک‌اند، API و پایگاه داده</p>
+          </div>
+          <div class="do-card glass reveal">
+            <span class="do-icon" aria-hidden="true"><i class="devicon-arduino-plain colored"></i></span>
+            <h4>سخت‌افزار و AVR</h4>
+            <p>برنامه‌نویسی میکروکنترلر و پروژه‌های سخت‌افزاری</p>
+          </div>
+          <div class="do-card glass reveal">
+            <span class="do-icon" aria-hidden="true">
+              <svg viewBox="0 0 128 128" width="30" height="30" fill="none" aria-hidden="true"><rect x="14" y="14" width="100" height="100" rx="12" stroke="#FF5E3A" stroke-width="6" /><path d="M28 96h24l8-16h16l8-14M28 72h16l6-12M86 96V72l-6-12" stroke="#FF5E3A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>
+            <h4>طراحی PCB</h4>
+            <p>طراحی بردهای الکترونیکی با Altium Designer</p>
+          </div>
+          <div class="do-card glass reveal">
+            <span class="do-icon" aria-hidden="true"><i class="devicon-git-plain colored"></i></span>
+            <h4>ابزارهای توسعه</h4>
+            <p>Git، GitHub، Vercel و استقرار پروژه‌ها</p>
+          </div>
+          <div class="do-card glass reveal">
+            <span class="do-icon" aria-hidden="true"><i class="devicon-pwa devicon-plain colored"></i></span>
+            <h4>اپلیکیشن PWA</h4>
+            <p>ساخت وب‌اپلیکیشن‌های قابل نصب و آفلاین</p>
+          </div>
+          <div class="do-card glass reveal">
+            <span class="do-icon" aria-hidden="true">
+              <svg viewBox="0 0 128 128" width="30" height="30" fill="none" aria-hidden="true"><rect x="32" y="44" width="64" height="50" rx="12" stroke="#EC4899" stroke-width="7" /><path d="M52 44V28M76 44V28" stroke="#EC4899" stroke-width="7" stroke-linecap="round" /><circle cx="52" cy="68" r="6" fill="#EC4899" /><circle cx="76" cy="68" r="6" fill="#EC4899" /><path d="M48 88h32" stroke="#EC4899" stroke-width="7" stroke-linecap="round" /></svg>
+            </span>
+            <h4>ابزارهای AI</h4>
+            <p>استفاده از ابزارهای هوش مصنوعی در توسعه</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- ================================================================
-         بخش حرفه‌ها / مهارت‌ها
+         بخش مسیر یادگیری و توسعه
+    ================================================================ -->
+    <section id="journey" class="section">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="section-tag en">Journey</span>
+          <h2 class="section-title"><span class="grad">مسیر یادگیری و توسعه</span></h2>
+          <p class="section-sub">مسیری که تا امروز طی کرده‌ام — مرحله به مرحله، با ساختن چیزهای واقعی.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-card glass">
+              <span class="tl-step en">Step 01</span>
+              <h3>شروع برنامه‌نویسی</h3>
+              <p>آشنایی با مفاهیم پایه‌ی برنامه‌نویسی و منطق حل مسئله</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-card glass">
+              <span class="tl-step en">Step 02</span>
+              <h3>یادگیری Python</h3>
+              <p>یادگیری پایتون به‌عنوان نخستین زبان جدی برنامه‌نویسی</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-card glass">
+              <span class="tl-step en">Step 03</span>
+              <h3>توسعه‌ی وب</h3>
+              <p>HTML, CSS و JavaScript و ساخت اولین صفحات وب</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-card glass">
+              <span class="tl-step en">Step 04</span>
+              <h3>بک‌اند و دیتابیس</h3>
+              <p>یادگیری PHP و MySQL برای ساخت وب‌سایت‌های پویا و پایگاه داده</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-card glass">
+              <span class="tl-step en">Step 05</span>
+              <h3>React و اپ‌های مدرن</h3>
+              <p>ساخت وب‌اپلیکیشن‌های تعاملی با React</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-card glass">
+              <span class="tl-step en">Step 06</span>
+              <h3>Git و GitHub</h3>
+              <p>کنترل نسخه و همکاری روی پروژه‌ها با گیت و گیت‌هاب</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-card glass">
+              <span class="tl-step en">Step 07</span>
+              <h3>سخت‌افزار و AVR</h3>
+              <p>برنامه‌نویسی میکروکنترلر AVR با زبان C و C++</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-card glass">
+              <span class="tl-step en">Step 08</span>
+              <h3>طراحی PCB</h3>
+              <p>طراحی بردهای الکترونیکی با Altium Designer</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-card glass">
+              <span class="tl-step en">Step 09</span>
+              <h3>PWA و استقرار</h3>
+              <p>ساخت اپلیکیشن‌های PWA و استقرار آن‌ها روی Vercel</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-card glass">
+              <span class="tl-step en">Step 10</span>
+              <h3>AI Tools</h3>
+              <p>به‌کارگیری ابزارهای هوش مصنوعی برای سرعت و کیفیت بیشتر</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-card glass">
+              <span class="tl-step en">Step 11</span>
+              <h3>پروژه‌های شخصی</h3>
+              <p>ساخت و استقرار پروژه‌های واقعی و قابل استفاده</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         بخش مهارت‌ها / حرفه‌ها
     ================================================================ -->
     <section id="skills" class="section">
       <div class="container">
 
         <div class="section-head reveal">
-          <span class="section-tag">Skills</span>
-          <h2 class="section-title"><span class="grad">حرفه‌ها</span></h2>
+          <span class="section-tag en">Skills</span>
+          <h2 class="section-title"><span class="grad">مهارت‌ها و حرفه‌ها</span></h2>
+          <p class="section-sub">روی هر مهارت کلیک کنید تا جزئیات بیشتری ببینید.</p>
         </div>
 
+        <!-- Programming -->
+        <h3 class="skill-group-title reveal">برنامه‌نویسی <span class="en">Programming</span></h3>
         <div class="skills-grid stagger">
 
-          <!-- کارت ویژه تمام‌عرض
-          <article class="skill-card special tilt reveal">
-            <div class="skill-icon">
-              <svg viewBox="0 0 128 128" width="36" height="36" aria-hidden="true">
-                <defs>
-                  <linearGradient id="gradStack" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#000000" />
-                    <stop offset="1" stop-color="#000000" />
-                  </linearGradient>
-                </defs>
-                <path d="M18 84l46 26 46-26M18 64l46 26 46-26M18 44l46 26 46-26L64 18z"
-                      fill="none" stroke="url(#gradStack)" stroke-width="7" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div class="skill-info">
-              <div class="skill-head">
-                <h3 class="en" dir="ltr">Full Stack Developer</h3>
-                <span class="skill-fa">برنامه‌نویس فول‌استک</span>
-              </div>
-              <div class="skill-meta">
-                <span class="skill-bar"><span class="skill-fill" data-width="78"></span></span>
-                <span class="skill-percent"><span class="counter" data-count="78" data-suffix="٪">۰</span></span>
-              </div>
-            </div>
-          </article> -->
-
-          <!-- Full Stack -->
-          <article class="skill-card special tilt reveal skill-fs">
-            <div class="skill-icon">
-               <svg viewBox="0 0 128 128" width="36" height="36" aria-hidden="true">
-                <defs>
-                  <linearGradient id="gradStack" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#2A1EA8" />
-                    
-                  </linearGradient>
-                </defs>
-                <path d="M18 84l46 26 46-26M18 64l46 26 46-26M18 44l46 26 46-26L64 18z"
-                      fill="none" stroke="url(#gradStack)" stroke-width="7" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div class="skill-info">
-              <div class="skill-head">
-                <h3 class="en" dir="ltr">Full Stack</h3>
-                <span class="skill-fa">برنامه‌نویس فول‌استک</span>
-              </div>
-              <div class="skill-meta">
-                <span class="skill-bar"><span class="skill-fill" data-width="95"></span></span>
-                <span class="skill-percent"><span class="counter" data-count="95" data-suffix="٪">۰</span></span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Python -->
-          <article class="skill-card tilt reveal skill-py">
+          <article class="skill-card tilt reveal skill-py" data-skill="python" tabindex="0" role="button" aria-label="جزئیات مهارت Python">
             <div class="skill-icon"><i class="devicon-python-plain colored"></i></div>
             <div class="skill-info">
               <div class="skill-head">
@@ -269,8 +479,7 @@
             </div>
           </article>
 
-          <!-- C -->
-          <article class="skill-card tilt reveal skill-c">
+          <article class="skill-card tilt reveal skill-c" data-skill="c" tabindex="0" role="button" aria-label="جزئیات مهارت C">
             <div class="skill-icon"><i class="devicon-c-plain colored"></i></div>
             <div class="skill-info">
               <div class="skill-head">
@@ -284,8 +493,7 @@
             </div>
           </article>
 
-          <!-- C++ -->
-          <article class="skill-card tilt reveal skill-cpp">
+          <article class="skill-card tilt reveal skill-cpp" data-skill="cpp" tabindex="0" role="button" aria-label="جزئیات مهارت C++">
             <div class="skill-icon"><i class="devicon-cplusplus-plain colored"></i></div>
             <div class="skill-info">
               <div class="skill-head">
@@ -299,8 +507,13 @@
             </div>
           </article>
 
-          <!-- HTML -->
-          <article class="skill-card tilt reveal skill-html">
+        </div>
+
+        <!-- Web -->
+        <h3 class="skill-group-title reveal">وب <span class="en">Web</span></h3>
+        <div class="skills-grid stagger">
+
+          <article class="skill-card tilt reveal skill-html" data-skill="html" tabindex="0" role="button" aria-label="جزئیات مهارت HTML">
             <div class="skill-icon"><i class="devicon-html5-plain colored"></i></div>
             <div class="skill-info">
               <div class="skill-head">
@@ -314,8 +527,7 @@
             </div>
           </article>
 
-          <!-- CSS -->
-          <article class="skill-card tilt reveal skill-css">
+          <article class="skill-card tilt reveal skill-css" data-skill="css" tabindex="0" role="button" aria-label="جزئیات مهارت CSS">
             <div class="skill-icon"><i class="devicon-css3-plain colored"></i></div>
             <div class="skill-info">
               <div class="skill-head">
@@ -329,8 +541,7 @@
             </div>
           </article>
 
-          <!-- JavaScript -->
-          <article class="skill-card tilt reveal skill-js">
+          <article class="skill-card tilt reveal skill-js" data-skill="javascript" tabindex="0" role="button" aria-label="جزئیات مهارت JavaScript">
             <div class="skill-icon"><i class="devicon-javascript-plain colored"></i></div>
             <div class="skill-info">
               <div class="skill-head">
@@ -344,13 +555,12 @@
             </div>
           </article>
 
-          <!-- MySQL & Database -->
-          <article class="skill-card tilt reveal skill-mysql">
-            <div class="skill-icon"><i class="devicon-mysql-plain colored"></i></div>
+          <article class="skill-card tilt reveal skill-react" data-skill="react" tabindex="0" role="button" aria-label="جزئیات مهارت React">
+            <div class="skill-icon"><i class="devicon-react-original colored"></i></div>
             <div class="skill-info">
               <div class="skill-head">
-                <h3 class="en" dir="ltr">MySQL & Database</h3>
-                <span class="skill-fa">مای‌اس‌کیوال و دیتابیس</span>
+                <h3 class="en" dir="ltr">React</h3>
+                <span class="skill-fa">ری‌اکت</span>
               </div>
               <div class="skill-meta">
                 <span class="skill-bar"><span class="skill-fill" data-width="75"></span></span>
@@ -359,8 +569,7 @@
             </div>
           </article>
 
-          <!-- PHP -->
-          <article class="skill-card tilt reveal skill-php">
+          <article class="skill-card tilt reveal skill-php" data-skill="php" tabindex="0" role="button" aria-label="جزئیات مهارت PHP">
             <div class="skill-icon"><i class="devicon-php-plain colored"></i></div>
             <div class="skill-info">
               <div class="skill-head">
@@ -374,8 +583,33 @@
             </div>
           </article>
 
-          <!-- AVR (آیکون سفارشی) -->
-          <article class="skill-card tilt reveal skill-avr">
+        </div>
+
+        <!-- Database -->
+        <h3 class="skill-group-title reveal">دیتابیس <span class="en">Database</span></h3>
+        <div class="skills-grid stagger">
+
+          <article class="skill-card tilt reveal skill-mysql" data-skill="mysql" tabindex="0" role="button" aria-label="جزئیات مهارت MySQL">
+            <div class="skill-icon"><i class="devicon-mysql-plain colored"></i></div>
+            <div class="skill-info">
+              <div class="skill-head">
+                <h3 class="en" dir="ltr">MySQL & Database</h3>
+                <span class="skill-fa">مای‌اس‌کیوال و دیتابیس</span>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-bar"><span class="skill-fill" data-width="75"></span></span>
+                <span class="skill-percent"><span class="counter" data-count="75" data-suffix="٪">۰</span></span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Hardware -->
+        <h3 class="skill-group-title reveal">سخت‌افزار <span class="en">Hardware</span></h3>
+        <div class="skills-grid stagger">
+
+          <article class="skill-card tilt reveal skill-avr" data-skill="avr" tabindex="0" role="button" aria-label="جزئیات مهارت AVR">
             <div class="skill-icon">
               <svg viewBox="0 0 128 128" width="34" height="34" fill="none" aria-hidden="true">
                 <rect x="22" y="22" width="84" height="84" rx="14" stroke="#2ECC71" stroke-width="7" />
@@ -396,8 +630,7 @@
             </div>
           </article>
 
-          <!-- Arduino IDE -->
-          <article class="skill-card tilt reveal skill-arduino">
+          <article class="skill-card tilt reveal skill-arduino" data-skill="arduino" tabindex="0" role="button" aria-label="جزئیات مهارت Arduino">
             <div class="skill-icon"><i class="devicon-arduino-plain colored"></i></div>
             <div class="skill-info">
               <div class="skill-head">
@@ -411,13 +644,11 @@
             </div>
           </article>
 
-          <!-- Altium Designer (آیکون سفارشی) -->
-          <article class="skill-card tilt reveal skill-altium">
+          <article class="skill-card tilt reveal skill-altium" data-skill="altium" tabindex="0" role="button" aria-label="جزئیات مهارت Altium Designer">
             <div class="skill-icon">
               <svg viewBox="0 0 128 128" width="34" height="34" fill="none" aria-hidden="true">
                 <rect x="14" y="14" width="100" height="100" rx="12" stroke="#FF5E3A" stroke-width="6" />
-                <path d="M28 96h24l8-16h16l8-14M28 72h16l6-12M86 96V72l-6-12"
-                      stroke="#FF5E3A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M28 96h24l8-16h16l8-14M28 72h16l6-12M86 96V72l-6-12" stroke="#FF5E3A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
                 <circle cx="28" cy="96" r="6" fill="#FF5E3A" />
                 <circle cx="84" cy="58" r="6" fill="#FF5E3A" />
                 <circle cx="108" cy="72" r="6" fill="#FF5E3A" />
@@ -436,13 +667,46 @@
             </div>
           </article>
 
-          <!-- React -->
-          <article class="skill-card tilt reveal skill-react">
-            <div class="skill-icon"><i class="devicon-react-original colored"></i></div>
+        </div>
+
+        <!-- ابزارهای توسعه -->
+        <h3 class="skill-group-title reveal">ابزارهای توسعه <span class="en">Dev Tools</span></h3>
+        <div class="skills-grid stagger">
+
+          <article class="skill-card tilt reveal skill-git" data-skill="git" tabindex="0" role="button" aria-label="جزئیات مهارت Git">
+            <div class="skill-icon"><i class="devicon-git-plain colored"></i></div>
             <div class="skill-info">
               <div class="skill-head">
-                <h3 class="en" dir="ltr">React</h3>
-                <span class="skill-fa">ری‌اکت</span>
+                <h3 class="en" dir="ltr">Git</h3>
+                <span class="skill-fa">گیت</span>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-bar"><span class="skill-fill" data-width="80"></span></span>
+                <span class="skill-percent"><span class="counter" data-count="80" data-suffix="٪">۰</span></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="skill-card tilt reveal skill-github" data-skill="github" tabindex="0" role="button" aria-label="جزئیات مهارت GitHub">
+            <div class="skill-icon"><i class="devicon-github-original"></i></div>
+            <div class="skill-info">
+              <div class="skill-head">
+                <h3 class="en" dir="ltr">GitHub</h3>
+                <span class="skill-fa">گیت‌هاب</span>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-bar"><span class="skill-fill" data-width="80"></span></span>
+                <span class="skill-percent"><span class="counter" data-count="80" data-suffix="٪">۰</span></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="skill-card tilt reveal skill-vercel" data-skill="vercel" tabindex="0" role="button" aria-label="جزئیات مهارت Vercel">
+            <div class="skill-icon"><i class="devicon-vercel-plain"></i></div>
+            <div class="skill-info">
+              <div class="skill-head">
+                <h3 class="en" dir="ltr">Vercel & Deployment</h3>
+                <span class="skill-fa">ورسل و استقرار</span>
               </div>
               <div class="skill-meta">
                 <span class="skill-bar"><span class="skill-fill" data-width="75"></span></span>
@@ -451,8 +715,36 @@
             </div>
           </article>
 
-          <!-- PWA (آیکون سفارشی) -->
-          <article class="skill-card tilt reveal skill-pwa">
+        </div>
+
+        <!-- فناوری‌های مدرن -->
+        <h3 class="skill-group-title reveal">فناوری‌های مدرن <span class="en">Modern Tech</span></h3>
+        <div class="skills-grid stagger">
+
+          <article class="skill-card special tilt reveal skill-fs" data-skill="fullstack" tabindex="0" role="button" aria-label="جزئیات مهارت Full Stack">
+            <div class="skill-icon">
+              <svg viewBox="0 0 128 128" width="36" height="36" aria-hidden="true">
+                <defs>
+                  <linearGradient id="gradStack" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#2A1EA8" />
+                  </linearGradient>
+                </defs>
+                <path d="M18 84l46 26 46-26M18 64l46 26 46-26M18 44l46 26 46-26L64 18z" fill="none" stroke="url(#gradStack)" stroke-width="7" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="skill-info">
+              <div class="skill-head">
+                <h3 class="en" dir="ltr">Full Stack</h3>
+                <span class="skill-fa">برنامه‌نویس فول‌استک</span>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-bar"><span class="skill-fill" data-width="95"></span></span>
+                <span class="skill-percent"><span class="counter" data-count="95" data-suffix="٪">۰</span></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="skill-card tilt reveal skill-pwa" data-skill="pwa" tabindex="0" role="button" aria-label="جزئیات مهارت PWA">
             <div class="skill-icon">
               <svg viewBox="0 0 128 128" width="34" height="34" fill="none" aria-hidden="true">
                 <rect x="40" y="18" width="48" height="92" rx="10" stroke="#00D4FF" stroke-width="7" />
@@ -474,53 +766,7 @@
             </div>
           </article>
 
-          <!-- Git -->
-          <article class="skill-card tilt reveal skill-git">
-            <div class="skill-icon"><i class="devicon-git-plain colored"></i></div>
-            <div class="skill-info">
-              <div class="skill-head">
-                <h3 class="en" dir="ltr">Git</h3>
-                <span class="skill-fa">گیت</span>
-              </div>
-              <div class="skill-meta">
-                <span class="skill-bar"><span class="skill-fill" data-width="80"></span></span>
-                <span class="skill-percent"><span class="counter" data-count="80" data-suffix="٪">۰</span></span>
-              </div>
-            </div>
-          </article>
-
-          <!-- GitHub -->
-          <article class="skill-card tilt reveal skill-github">
-            <div class="skill-icon"><i class="devicon-github-original"></i></div>
-            <div class="skill-info">
-              <div class="skill-head">
-                <h3 class="en" dir="ltr">GitHub</h3>
-                <span class="skill-fa">گیت‌هاب</span>
-              </div>
-              <div class="skill-meta">
-                <span class="skill-bar"><span class="skill-fill" data-width="80"></span></span>
-                <span class="skill-percent"><span class="counter" data-count="80" data-suffix="٪">۰</span></span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Vercel & Deployment -->
-          <article class="skill-card tilt reveal skill-vercel">
-            <div class="skill-icon"><i class="devicon-vercel-plain"></i></div>
-            <div class="skill-info">
-              <div class="skill-head">
-                <h3 class="en" dir="ltr">Vercel & Deployment</h3>
-                <span class="skill-fa">ورسل و استقرار</span>
-              </div>
-              <div class="skill-meta">
-                <span class="skill-bar"><span class="skill-fill" data-width="75"></span></span>
-                <span class="skill-percent"><span class="counter" data-count="75" data-suffix="٪">۰</span></span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Backend & API (آیکون سفارشی) -->
-          <article class="skill-card tilt reveal skill-api">
+          <article class="skill-card tilt reveal skill-api" data-skill="backend" tabindex="0" role="button" aria-label="جزئیات مهارت Backend و API">
             <div class="skill-icon">
               <svg viewBox="0 0 128 128" width="34" height="34" fill="none" aria-hidden="true">
                 <rect x="20" y="26" width="88" height="30" rx="8" stroke="#F59E0B" stroke-width="7" />
@@ -542,8 +788,7 @@
             </div>
           </article>
 
-          <!-- SEO (آیکون سفارشی) -->
-          <article class="skill-card tilt reveal skill-seo">
+          <article class="skill-card tilt reveal skill-seo" data-skill="seo" tabindex="0" role="button" aria-label="جزئیات مهارت SEO">
             <div class="skill-icon">
               <svg viewBox="0 0 128 128" width="34" height="34" fill="none" aria-hidden="true">
                 <path d="M26 92l28-30 16 14 32-36" stroke="#10B981" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
@@ -563,8 +808,7 @@
             </div>
           </article>
 
-          <!-- UI/UX (آیکون سفارشی) -->
-          <article class="skill-card tilt reveal skill-ux">
+          <article class="skill-card tilt reveal skill-ux" data-skill="uiux" tabindex="0" role="button" aria-label="جزئیات مهارت UI/UX">
             <div class="skill-icon">
               <svg viewBox="0 0 128 128" width="34" height="34" fill="none" aria-hidden="true">
                 <rect x="18" y="24" width="92" height="80" rx="10" stroke="#A855F7" stroke-width="7" />
@@ -585,8 +829,7 @@
             </div>
           </article>
 
-          <!-- AI Tools (آیکون سفارشی) -->
-          <article class="skill-card tilt reveal skill-ai">
+          <article class="skill-card tilt reveal skill-ai" data-skill="ai" tabindex="0" role="button" aria-label="جزئیات مهارت AI Tools">
             <div class="skill-icon">
               <svg viewBox="0 0 128 128" width="34" height="34" fill="none" aria-hidden="true">
                 <rect x="32" y="44" width="64" height="50" rx="12" stroke="#EC4899" stroke-width="7" />
@@ -609,65 +852,457 @@
           </article>
 
         </div>
+
       </div>
     </section>
 
     <!-- ================================================================
-         بخش لینک‌های دیگر / پروژه‌ها
+         بخش Tech Stack
+    ================================================================ -->
+    <section id="techstack" class="section">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="section-tag en">Tech Stack</span>
+          <h2 class="section-title"><span class="grad">تکنولوژی‌هایی که استفاده می‌کنم</span></h2>
+        </div>
+
+        <div class="marquee" role="marquee" aria-label="تکنولوژی‌های من">
+          <div class="marquee-track">
+            <div class="marquee-group">
+              <span class="tech-chip"><i class="devicon-python-plain colored"></i> Python</span>
+              <span class="tech-chip"><i class="devicon-react-original colored"></i> React</span>
+              <span class="tech-chip"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+              <span class="tech-chip"><i class="devicon-html5-plain colored"></i> HTML</span>
+              <span class="tech-chip"><i class="devicon-css3-plain colored"></i> CSS</span>
+              <span class="tech-chip"><i class="devicon-php-plain colored"></i> PHP</span>
+              <span class="tech-chip"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+              <span class="tech-chip"><i class="devicon-git-plain colored"></i> Git</span>
+              <span class="tech-chip"><i class="devicon-github-original"></i> GitHub</span>
+              <span class="tech-chip"><i class="devicon-vercel-plain"></i> Vercel</span>
+              <span class="tech-chip"><i class="devicon-arduino-plain colored"></i> Arduino</span>
+              <span class="tech-chip tech-chip-avr">AVR</span>
+              <span class="tech-chip tech-chip-altium">Altium</span>
+              <span class="tech-chip"><i class="devicon-c-plain colored"></i> C</span>
+              <span class="tech-chip"><i class="devicon-cplusplus-plain colored"></i> C++</span>
+            </div>
+            <div class="marquee-group" aria-hidden="true">
+              <span class="tech-chip"><i class="devicon-python-plain colored"></i> Python</span>
+              <span class="tech-chip"><i class="devicon-react-original colored"></i> React</span>
+              <span class="tech-chip"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+              <span class="tech-chip"><i class="devicon-html5-plain colored"></i> HTML</span>
+              <span class="tech-chip"><i class="devicon-css3-plain colored"></i> CSS</span>
+              <span class="tech-chip"><i class="devicon-php-plain colored"></i> PHP</span>
+              <span class="tech-chip"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+              <span class="tech-chip"><i class="devicon-git-plain colored"></i> Git</span>
+              <span class="tech-chip"><i class="devicon-github-original"></i> GitHub</span>
+              <span class="tech-chip"><i class="devicon-vercel-plain"></i> Vercel</span>
+              <span class="tech-chip"><i class="devicon-arduino-plain colored"></i> Arduino</span>
+              <span class="tech-chip tech-chip-avr">AVR</span>
+              <span class="tech-chip tech-chip-altium">Altium</span>
+              <span class="tech-chip"><i class="devicon-c-plain colored"></i> C</span>
+              <span class="tech-chip"><i class="devicon-cplusplus-plain colored"></i> C++</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         بخش پروژه‌ها
     ================================================================ -->
     <section id="projects" class="section">
       <div class="container">
 
         <div class="section-head reveal">
-          <span class="section-tag">Links</span>
-          <h2 class="section-title"><span class="grad">لینک‌های دیگر</span></h2>
+          <span class="section-tag en">Projects</span>
+          <h2 class="section-title"><span class="grad">پروژه‌های من</span></h2>
+          <p class="section-sub">پروژه‌هایی که ساخته‌ام و در دسترس آنلاین هستند. روی هر پروژه کلیک کنید تا جزئیات بیشتری ببینید.</p>
         </div>
 
-        <div class="projects-grid stagger">
+        <!-- فیلتر پروژه‌ها -->
+        <div class="project-filters reveal" role="group" aria-label="فیلتر پروژه‌ها">
+          <button class="filter-btn active" data-filter="all">همه</button>
+          <button class="filter-btn" data-filter="web">وب</button>
+          <button class="filter-btn" data-filter="finance">مالی</button>
+          <button class="filter-btn" data-filter="productivity">بهره‌وری</button>
+          <button class="filter-btn" data-filter="personal">شخصی</button>
+        </div>
 
-          <a href="https://www.mohammadmehdihz.ir" target="_blank" rel="noopener" class="project-card glass tilt reveal">
-            <h3>سایت اصلی</h3>
-            <p>وب‌سایت شخصی و رسمی من</p>
-            <span class="project-link">ورود</span>
-          </a>
+        <!-- همه‌ی پروژه‌ها -->
+        <h3 class="sub-title reveal">همه‌ی پروژه‌ها</h3>
+        <div class="projects-grid stagger" id="projectsGrid">
 
-          <!-- <a href="https://my-id-cart-roan-36.vercel.app" target="_blank" rel="noopener" class="project-card glass tilt reveal">
-            <h3>کارت هویت | iCART</h3>
-            <p>کارت هویت دیجیتال من</p>
-            <span class="project-link">ورود</span>
-          </a> -->
+          <article class="project-card glass tilt reveal" data-project="site" data-cat="personal web" tabindex="0" role="button" aria-label="جزئیات پروژه سایت اصلی">
+            <div class="project-thumb thumb-site" aria-hidden="true">
+              <span class="thumb-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="project-body">
+              <div class="project-head">
+                <h3>سایت اصلی</h3>
+                <span class="project-status status-active">فعال</span>
+              </div>
+              <p>وب‌سایت شخصی و رسمی من</p>
+              <div class="project-tags">
+                <span>شخصی</span><span>وب</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://www.mohammadmehdihz.ir" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">مشاهده</a>
+              </div>
+            </div>
+          </article>
 
-          <a href="https://hesabdaar.vercel.app" target="_blank" rel="noopener" class="project-card glass tilt reveal">
-            <h3>برنامه مدیریت مالی حساب دار</h3>
-            <p>اپلیکیشن مدیریت مالی شخصی</p>
-            <span class="project-link">ورود</span>
-          </a>
-          
-          <a href="https://petyarplus.vercel.app/" target="_blank" rel="noopener" class="project-card glass tilt reveal">
-            <h3>پت پلاس</h3>
-            <p>برنامه مراقبت از حیوانات خانگی</p>
-            <span class="project-link">ورود</span>
-          </a>
+          <article class="project-card glass tilt reveal" data-project="hesabdaar" data-cat="web finance" tabindex="0" role="button" aria-label="جزئیات پروژه حساب دار">
+            <div class="project-thumb thumb-finance" aria-hidden="true">
+              <span class="thumb-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="none"><rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 10h18M7 15h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="project-body">
+              <div class="project-head">
+                <h3>برنامه مدیریت مالی حساب دار</h3>
+                <span class="project-status status-active">فعال</span>
+              </div>
+              <p>اپلیکیشن مدیریت مالی شخصی</p>
+              <div class="project-tags">
+                <span>مالی</span><span>وب اپلیکیشن</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://hesabdaar.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">مشاهده</a>
+              </div>
+            </div>
+          </article>
 
-          <a href="https://jibchi.vercel.app/" target="_blank" rel="noopener" class="project-card glass tilt reveal">
-            <h3>جیب‌چی</h3>
-            <p>مدیریت هوشمند پول</p>
-            <span class="project-link">ورود</span>
-          </a>
+          <article class="project-card glass tilt reveal" data-project="petyar" data-cat="web personal" tabindex="0" role="button" aria-label="جزئیات پروژه پت پلاس">
+            <div class="project-thumb thumb-pet" aria-hidden="true">
+              <span class="thumb-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="none"><path d="M4 10c0-2 1.3-3 2.5-3S9 8 9 10s-1.5 3-2.5 3S4 12 4 10z" stroke="currentColor" stroke-width="1.6"/><path d="M20 10c0-2-1.3-3-2.5-3S15 8 15 10s1.5 3 2.5 3S20 12 20 10z" stroke="currentColor" stroke-width="1.6"/><path d="M9 13h6l-1 6H10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 13v6" stroke="currentColor" stroke-width="1.6"/><path d="M7 14c-1.5 1-2.5 2-2.5 3.5M17 14c1.5 1 2.5 2 2.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="project-body">
+              <div class="project-head">
+                <h3>پت پلاس</h3>
+                <span class="project-status status-active">فعال</span>
+              </div>
+              <p>برنامه مراقبت از حیوانات خانگی</p>
+              <div class="project-tags">
+                <span>وب اپلیکیشن</span><span>شخصی</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://petyarplus.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">مشاهده</a>
+              </div>
+            </div>
+          </article>
 
-          <a href="https://super-planner.vercel.app/" target="_blank" rel="noopener" class="project-card glass tilt reveal">
-            <h3>Super Planner</h3>
-            <p>سیستم مدیریت زمان و زندگی شخصی</p>
-            <span class="project-link">ورود</span>
-          </a>
+          <article class="project-card glass tilt reveal" data-project="jibchi" data-cat="web finance" tabindex="0" role="button" aria-label="جزئیات پروژه جیب‌چی">
+            <div class="project-thumb thumb-finance" aria-hidden="true">
+              <span class="thumb-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v10M15.5 9.5c-.6-1-1.9-1.5-3.5-1.5-1.9 0-3.5 1-3.5 2.5S10 13 12.5 13.5 16 14.6 16 16.5 14.3 18.5 12 18.5c-1.8 0-3.1-.7-3.7-1.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="project-body">
+              <div class="project-head">
+                <h3>جیب‌چی</h3>
+                <span class="project-status status-active">فعال</span>
+              </div>
+              <p>مدیریت هوشمند پول</p>
+              <div class="project-tags">
+                <span>مالی</span><span>وب اپلیکیشن</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://jibchi.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">مشاهده</a>
+              </div>
+            </div>
+          </article>
 
-          <a href="https://tokenchi.vercel.app/" target="_blank" rel="noopener" class="project-card glass tilt reveal">
-            <h3>توکن‌چی</h3>
-            <p>مدیریت و نگه‌داری توکن‌ها</p>
-            <span class="project-link">ورود</span>
-          </a>
+          <article class="project-card glass tilt reveal" data-project="planner" data-cat="web productivity" tabindex="0" role="button" aria-label="جزئیات پروژه Super Planner">
+            <div class="project-thumb thumb-planner" aria-hidden="true">
+              <span class="thumb-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 2v4M16 2v4M3 9h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7 14h2M11 14h2M15 14h2M7 17.5h2M11 17.5h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="project-body">
+              <div class="project-head">
+                <h3>Super Planner</h3>
+                <span class="project-status status-active">فعال</span>
+              </div>
+              <p>سیستم مدیریت زمان و زندگی شخصی</p>
+              <div class="project-tags">
+                <span>بهره‌وری</span><span>وب اپلیکیشن</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://super-planner.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">مشاهده</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass tilt reveal" data-project="tokenchi" data-cat="web finance" tabindex="0" role="button" aria-label="جزئیات پروژه توکن‌چی">
+            <div class="project-thumb thumb-token" aria-hidden="true">
+              <span class="thumb-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 12l4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="project-body">
+              <div class="project-head">
+                <h3>توکن‌چی</h3>
+                <span class="project-status status-active">فعال</span>
+              </div>
+              <p>مدیریت و نگه‌داری توکن‌ها</p>
+              <div class="project-tags">
+                <span>مالی</span><span>وب اپلیکیشن</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://tokenchi.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">مشاهده</a>
+              </div>
+            </div>
+          </article>
 
         </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         بخش خدمات
+    ================================================================ -->
+    <section id="services" class="section">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="section-tag en">Services</span>
+          <h2 class="section-title"><span class="grad">چه خدماتی ارائه می‌دهم؟</span></h2>
+          <p class="section-sub">بر اساس مهارت‌هایی که دارم، می‌توانم این کارها را انجام دهم.</p>
+        </div>
+
+        <div class="services-grid stagger">
+          <div class="service-card glass reveal">
+            <span class="service-num en">01</span>
+            <h3>طراحی و توسعه وب‌سایت</h3>
+            <p>وب‌سایت شخصی، فروشگاهی و شرکتی با HTML, CSS و JavaScript</p>
+          </div>
+          <div class="service-card glass reveal">
+            <span class="service-num en">02</span>
+            <h3>توسعه‌ی وب اپلیکیشن</h3>
+            <p>وب‌اپلیکیشن‌های تعاملی با React و PWA</p>
+          </div>
+          <div class="service-card glass reveal">
+            <span class="service-num en">03</span>
+            <h3>توسعه‌ی Backend و API</h3>
+            <p>طراحی و ساخت API و سرویس‌های سمت سرور با PHP و Python</p>
+          </div>
+          <div class="service-card glass reveal">
+            <span class="service-num en">04</span>
+            <h3>طراحی Database</h3>
+            <p>طراحی و مدیریت پایگاه‌های داده با MySQL</p>
+          </div>
+          <div class="service-card glass reveal">
+            <span class="service-num en">05</span>
+            <h3>توسعه‌ی Python</h3>
+            <p>نوشتن برنامه و اسکریپت با زبان پایتون</p>
+          </div>
+          <div class="service-card glass reveal">
+            <span class="service-num en">06</span>
+            <h3>توسعه‌ی React</h3>
+            <p>ساخت رابط کاربری مدرن با ری‌اکت</p>
+          </div>
+          <div class="service-card glass reveal">
+            <span class="service-num en">07</span>
+            <h3>UI/UX و SEO</h3>
+            <p>بهینه‌سازی تجربه و رابط کاربری و سئوی سایت</p>
+          </div>
+          <div class="service-card glass reveal">
+            <span class="service-num en">08</span>
+            <h3>سخت‌افزار و AVR</h3>
+            <p>برنامه‌نویسی میکروکنترلر و پروژه‌های الکترونیکی</p>
+          </div>
+          <div class="service-card glass reveal">
+            <span class="service-num en">09</span>
+            <h3>طراحی PCB</h3>
+            <p>طراحی بردهای الکترونیکی با Altium Designer</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         بخش چه چیزهایی می‌سازم
+    ================================================================ -->
+    <section id="whatibuild" class="section">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="section-tag en">What I Build</span>
+          <h2 class="section-title"><span class="grad">چه چیزهایی می‌سازم؟</span></h2>
+        </div>
+
+        <div class="build-grid stagger">
+          <div class="build-card glass reveal">
+            <span class="build-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 19h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>وب اپلیکیشن</h3>
+            <p>اپلیکیشن‌های وب مدرن و تعاملی</p>
+          </div>
+          <div class="build-card glass reveal">
+            <span class="build-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M10.5 5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>PWA</h3>
+            <p>وب‌اپلیکیشن‌های قابل نصب و آفلاین</p>
+          </div>
+          <div class="build-card glass reveal">
+            <span class="build-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+            <h3>سیستم‌های مدیریتی</h3>
+            <p>سیستم‌های مدیریت داده و اطلاعات</p>
+          </div>
+          <div class="build-card glass reveal">
+            <span class="build-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v10M15.5 9.5c-.6-1-1.9-1.5-3.5-1.5-1.9 0-3.5 1-3.5 2.5S10 13 12.5 13.5 16 14.6 16 16.5 14.3 18.5 12 18.5c-1.8 0-3.1-.7-3.7-1.7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>اپ‌های مالی</h3>
+            <p>ابزارهای مدیریت مالی و بودجه</p>
+          </div>
+          <div class="build-card glass reveal">
+            <span class="build-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" aria-hidden="true"><circle cx="12" cy="13" r="8" stroke="currentColor" stroke-width="2"/><path d="M12 9v4l2.5 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 2h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>اپ‌های بهره‌وری شخصی</h3>
+            <p>برنامه‌های مدیریت زمان و برنامه‌ریزی</p>
+          </div>
+          <div class="build-card glass reveal">
+            <span class="build-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" aria-hidden="true"><path d="M15 5a4 4 0 0 0-5.3 3.8L4 14.5V19a1 1 0 0 0 1 1h4.5l5.7-5.7A4 4 0 0 0 19 9l-3 3-2-2 3-3a4 4 0 0 0-2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+            <h3>ابزارهای توسعه</h3>
+            <p>ابزارهای کمکی برای توسعه‌دهندگان</p>
+          </div>
+          <div class="build-card glass reveal">
+            <span class="build-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>پروژه‌های سخت‌افزاری</h3>
+            <p>پروژه‌های میکروکنترلر و الکترونیک</p>
+          </div>
+          <div class="build-card glass reveal">
+            <span class="build-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" aria-hidden="true"><rect x="4" y="9" width="16" height="11" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="14" r="1.4" fill="currentColor"/><circle cx="15" cy="14" r="1.4" fill="currentColor"/><path d="M9 3v3M15 3v3M12 9V7M2 14h2M20 14h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>ابزارهای اتوماسیون</h3>
+            <p>اتوماسیون کارهای تکراری با پایتون و اسکریپت</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         بخش فرآیند ساخت پروژه
+    ================================================================ -->
+    <section id="process" class="section">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="section-tag en">Process</span>
+          <h2 class="section-title"><span class="grad">فرآیند ساخت پروژه</span></h2>
+          <p class="section-sub">روشی که هنگام ساختن هر پروژه طی می‌کنم.</p>
+        </div>
+
+        <div class="process-grid stagger">
+          <div class="process-step reveal">
+            <span class="process-num en">01</span>
+            <h3>ایده</h3>
+            <p>شروع از یک ایده‌ی مشخص و تعریف هدف</p>
+          </div>
+          <div class="process-step reveal">
+            <span class="process-num en">02</span>
+            <h3>تحلیل</h3>
+            <p>بررسی نیازها و انتخاب تکنولوژی مناسب</p>
+          </div>
+          <div class="process-step reveal">
+            <span class="process-num en">03</span>
+            <h3>طراحی UI/UX</h3>
+            <p>طراحی رابط و تجربه‌ی کاربری</p>
+          </div>
+          <div class="process-step reveal">
+            <span class="process-num en">04</span>
+            <h3>توسعه</h3>
+            <p>پیاده‌سازی کد و ساخت امکانات</p>
+          </div>
+          <div class="process-step reveal">
+            <span class="process-num en">05</span>
+            <h3>تست</h3>
+            <p>بررسی و رفع خطاها در بخش‌های مختلف</p>
+          </div>
+          <div class="process-step reveal">
+            <span class="process-num en">06</span>
+            <h3>Deploy</h3>
+            <p>استقرار پروژه روی هاست یا Vercel</p>
+          </div>
+          <div class="process-step reveal">
+            <span class="process-num en">07</span>
+            <h3>بهبود</h3>
+            <p>بهینه‌سازی و افزودن امکانات جدید</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         بخش در حال یادگیری
+    ================================================================ -->
+    <section id="learning" class="section">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="section-tag en">Learning</span>
+          <h2 class="section-title"><span class="grad">در حال یادگیری</span></h2>
+          <p class="section-sub">مسیر رشد من ادامه دارد — این بخش بعداً تکمیل می‌شود.</p>
+        </div>
+
+        <div class="learning-grid stagger">
+          <div class="learn-card glass reveal">
+            <h3>در حال یادگیری</h3>
+            <span class="learn-chip">در حال تکمیل...</span>
+          </div>
+          <div class="learn-card glass reveal">
+            <h3>کاوش فعلی</h3>
+            <span class="learn-chip">به‌زودی</span>
+          </div>
+          <div class="learn-card glass reveal">
+            <h3>مهارت‌های بعدی</h3>
+            <span class="learn-chip">به‌زودی</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         بخش دستاوردها
+    ================================================================ -->
+    <section id="achievements" class="section">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="section-tag en">Milestones</span>
+          <h2 class="section-title"><span class="grad">دستاوردها و نقاط عطف</span></h2>
+          <p class="section-sub">تنها دستاوردهای واقعی و قابل مشاهده.</p>
+        </div>
+
+        <div class="ach-grid stagger">
+          <div class="ach-card glass reveal">
+            <span class="ach-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" aria-hidden="true"><path d="M12 15c-3-1-5-4-6-8 3-2 8-3 12 0 0 5-2 7-6 8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 15l-4 4M14 14l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="9" r="1.6" fill="currentColor"/></svg></span>
+            <h3>استقرار پروژه‌های آنلاین</h3>
+            <p>۶ پروژه‌ی قابل استفاده که هم‌اکنون به‌صورت آنلاین در دسترس هستند</p>
+          </div>
+          <div class="ach-card glass reveal">
+            <span class="ach-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" aria-hidden="true"><path d="M12 4 2 9l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M22 9v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>یادگیری خودآموز</h3>
+            <p>یادگیری فول‌استک از وب و دیتابیس تا سخت‌افزار به‌صورت خودآموز</p>
+          </div>
+          <div class="ach-card glass reveal">
+            <span class="ach-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>توسعه‌ی سخت‌افزار</h3>
+            <p>برنامه‌نویسی AVR و طراحی بردهای الکترونیکی با Altium Designer</p>
+          </div>
+          <div class="ach-card glass reveal">
+            <span class="ach-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M10.5 5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>ساخت اپ‌های PWA</h3>
+            <p>ساخت وب‌اپلیکیشن‌های قابل نصب و مدرن</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -678,7 +1313,7 @@
       <div class="container">
 
         <div class="section-head reveal">
-          <span class="section-tag">Contact</span>
+          <span class="section-tag en">Contact</span>
           <h2 class="section-title"><span class="grad">ارتباط با من</span></h2>
           <p class="section-sub">برای همکاری، سؤال یا هر گفت‌وگویی، از راه‌های زیر در دسترسم هستم.</p>
         </div>
@@ -695,9 +1330,9 @@
             <div class="contact-actions">
               <a href="mailto:mohammadmehdihaj71@gmail.com" class="btn btn-ghost">ارسال ایمیل</a>
               <button id="copyEmail" class="btn btn-primary">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              کپی ایمیل
-            </button>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                کپی ایمیل
+              </button>
             </div>
           </div>
 
@@ -709,11 +1344,54 @@
               <p class="en" dir="ltr">github.com/Mohammahz</p>
             </div>
             <div class="contact-actions">
-              <a href="https://github.com/Mohammahz" target="_blank" rel="noopener" class="btn btn-primary">مشاهده پروفایل</a>
+              <a href="https://github.com/Mohammahz" target="_blank" rel="noopener noreferrer" class="btn btn-primary">مشاهده پروفایل</a>
+            </div>
+          </div>
+
+          <!-- کارت وب‌سایت -->
+          <div class="contact-card glass tilt reveal">
+            <div class="contact-info">
+              <h3>وب‌سایت</h3>
+              <br>
+              <p class="en" dir="ltr">mohammadmehdihz.ir</p>
+            </div>
+            <div class="contact-actions">
+              <a href="https://www.mohammadmehdihz.ir" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">باز کردن سایت</a>
             </div>
           </div>
 
         </div>
+
+        <!-- فرم تماس -->
+        <div class="contact-form-wrap glass reveal">
+          <h3 class="form-title">فرم تماس</h3>
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-name">نام</label>
+                <input type="text" id="cf-name" name="name" placeholder="نام شما" autocomplete="name" required />
+                <span class="form-error" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="cf-email">ایمیل</label>
+                <input type="email" id="cf-email" name="email" placeholder="example@email.com" autocomplete="email" required />
+                <span class="form-error" aria-live="polite"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cf-subject">موضوع</label>
+              <input type="text" id="cf-subject" name="subject" placeholder="موضوع پیام" required />
+              <span class="form-error" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="cf-message">پیام</label>
+              <textarea id="cf-message" name="message" rows="5" placeholder="متن پیام شما..." required></textarea>
+              <span class="form-error" aria-live="polite"></span>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">ارسال پیام</button>
+          </form>
+        </div>
+
       </div>
     </section>
   </main>
@@ -722,10 +1400,48 @@
        فوتر
   ================================================================ -->
   <footer class="footer">
-    <span class="en" dir="ltr">Made by Mohammad Mehdi Hajizadeh</span> <span class="heart" aria-hidden="true">
-      <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z"/></svg>
-    </span>
-    <p class="footer-rights">© ۲۰۲۶ — تمامی حقوق محفوظ است.</p>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#home" class="logo">
+          <span class="logo-img"><img src="favicon.png" alt="لوگوی محمدمهدی حاجی‌زاده" /><span class="logo-ph">م</span></span>
+          <span class="logo-name">محمدمهدی حاجی‌زاده</span>
+        </a>
+        <p class="footer-desc">برنامه‌نویس فول‌استک، توسعه‌دهنده‌ی سخت‌افزار و AVR — ساکن یزد.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="دسترسی سریع">
+        <h4>دسترسی سریع</h4>
+        <a href="#home">خانه</a>
+        <a href="#about">درباره من</a>
+        <a href="#skills">مهارت‌ها</a>
+        <a href="#projects">پروژه‌ها</a>
+        <a href="#contact">ارتباط با من</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="پروژه‌ها">
+        <h4>پروژه‌ها</h4>
+        <a href="https://hesabdaar.vercel.app" target="_blank" rel="noopener noreferrer">حساب دار</a>
+        <a href="https://petyarplus.vercel.app/" target="_blank" rel="noopener noreferrer">پت پلاس</a>
+        <a href="https://jibchi.vercel.app/" target="_blank" rel="noopener noreferrer">جیب‌چی</a>
+        <a href="https://super-planner.vercel.app/" target="_blank" rel="noopener noreferrer">Super Planner</a>
+        <a href="https://tokenchi.vercel.app/" target="_blank" rel="noopener noreferrer">توکن‌چی</a>
+      </nav>
+
+      <div class="footer-col">
+        <h4>ارتباط</h4>
+        <a href="mailto:mohammadmehdihaj71@gmail.com" dir="ltr">mohammadmehdihaj71@gmail.com</a>
+        <a href="https://github.com/Mohammahz" target="_blank" rel="noopener noreferrer" dir="ltr">github.com/Mohammahz</a>
+        <a href="https://www.mohammadmehdihz.ir" target="_blank" rel="noopener noreferrer" dir="ltr">mohammadmehdihz.ir</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="en" dir="ltr">Made by Mohammad Mehdi Hajizadeh</span>
+      <span class="heart" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z"/></svg>
+      </span>
+      <p class="footer-rights">© ۲۰۲۶ — تمامی حقوق محفوظ است.</p>
+    </div>
   </footer>
 
   <!-- ===== دکمه‌ی بازگشت به بالا ===== -->
@@ -734,6 +1450,73 @@
       <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   </button>
+
+  <!-- ===== Command Palette ===== -->
+  <div class="palette-overlay" id="palette" role="dialog" aria-modal="true" aria-label="جستجو و فرمان‌ها" hidden>
+    <div class="palette-panel glass">
+      <div class="palette-search">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="text" id="paletteInput" placeholder="جستجوی پروژه، مهارت یا فرمان... (Esc برای بستن)" aria-label="جستجو" />
+      </div>
+      <div class="palette-results" id="paletteResults" role="listbox"></div>
+      <div class="palette-commands" id="paletteCommands"></div>
+    </div>
+  </div>
+
+  <!-- ===== مودال جزئیات مهارت ===== -->
+  <div class="modal-overlay" id="skillModal" role="dialog" aria-modal="true" aria-labelledby="skillModalTitle" hidden>
+    <div class="modal-panel glass">
+      <button class="modal-close" data-close-modal aria-label="بستن"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+      <div class="modal-icon" id="skillModalIcon"></div>
+      <h3 class="modal-title en" dir="ltr" id="skillModalTitle"></h3>
+      <span class="modal-fa" id="skillModalFa"></span>
+      <div class="modal-level">
+        <span class="modal-level-bar"><span id="skillModalBar"></span></span>
+        <span class="modal-level-percent" id="skillModalPercent"></span>
+      </div>
+      <div class="modal-section">
+        <h4>توضیح</h4>
+        <p id="skillModalDesc"></p>
+      </div>
+      <div class="modal-section">
+        <h4>کاربرد</h4>
+        <p id="skillModalUse"></p>
+      </div>
+      <div class="modal-section">
+        <h4>پروژه‌های مرتبط</h4>
+        <p id="skillModalProjects"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== مودال جزئیات پروژه ===== -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle" hidden>
+    <div class="modal-panel glass">
+      <button class="modal-close" data-close-modal aria-label="بستن"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+      <h3 class="modal-title" id="projectModalTitle"></h3>
+      <span class="modal-status" id="projectModalStatus"></span>
+      <div class="modal-section">
+        <h4>توضیح</h4>
+        <p id="projectModalDesc"></p>
+      </div>
+      <div class="modal-section">
+        <h4>هدف پروژه</h4>
+        <p id="projectModalGoal"></p>
+      </div>
+      <div class="modal-section">
+        <h4>ویژگی‌ها</h4>
+        <p id="projectModalFeatures"></p>
+      </div>
+      <div class="modal-section">
+        <h4>تکنولوژی‌ها</h4>
+        <div id="projectModalTags" class="modal-tags"></div>
+      </div>
+      <div class="modal-actions" id="projectModalActions"></div>
+    </div>
+  </div>
+
+  <!-- ===== ظرف Toast ===== -->
+  <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
 
   <!-- ===== اسکریپت اصلی ===== -->
   <script src="script.js"></script>
